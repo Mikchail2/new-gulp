@@ -1,0 +1,24 @@
+//Импорт общих стилей
+@import "./common";
+//Импорт шрифтов
+@import "./fonts";
+// //Импорт стилей страниц
+// @import "./pages/index";
+// @import "./pages/contacts";
+// blog
+@import "../blog/blog";
+//contacts
+@import "../contacts/contacts";
+
+// about
+@import "../about/about";
+//header
+@import "../header/header";
+// footer 
+@import "../footer/footer";
+//main
+@import "../menu/menu";
+//buttons
+@import "./buttons";
+
+//Импорт компонентов для страниц

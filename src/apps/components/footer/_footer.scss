@@ -1,0 +1,16 @@
+@import '../scss/mixin';
+.footer {
+  padding: 34px 0;
+
+  &_nav {
+    display: flex;
+  }
+
+  &_copy {
+    @include font_text;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: auto;
+  }
+}

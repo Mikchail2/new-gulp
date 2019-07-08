@@ -1,0 +1,40 @@
+@import 'mixin';
+.header{
+  padding: 27px 0;
+ &_flex-cont{
+   display: flex;
+ }
+  &_logo-box{
+    align-items: center;
+    display: flex;
+    &:hover{
+    }
+  }
+  &_logo{
+    width: 115px;
+    display: inline-block;
+    vertical-align: middle;
+   // box-shadow: 2px 2px 1px #000000;
+    &:before{
+      content: '';
+      transition: all 0.4s ease-out;
+      display: block;
+      padding-bottom: 42%;
+      background-image: url(../../img/logo.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &:hover:before{
+      transform: scale(1.2);
+    }
+  }
+  &_nav{
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+  }
+
+}

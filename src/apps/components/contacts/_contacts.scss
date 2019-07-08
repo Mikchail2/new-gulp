@@ -1,0 +1,30 @@
+@import '../scss/mixin';
+.contact {
+  background-color: $bg_contact;
+  &_title{
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  &_links {
+    display: flex;
+    margin: 0 -10px;
+    justify-content: center;
+    @include media_query(0, 1300px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &_link {
+    width: 25%;
+    padding: 57px 110px;
+    background-color: $bg_social;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    @include media_query(0, 1300px) {
+      margin-bottom: 10px;
+    }
+  }
+}

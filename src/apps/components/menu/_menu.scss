@@ -1,0 +1,22 @@
+@import '../scss/mixin';
+.menu {
+  &_list {
+    display: flex;
+  }
+
+  &_item {
+    margin-left: 12px;
+    @include font-text;
+    color: $black;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: solid 1px transparent;
+    transition: color, border 0.1s, 0.1s ease-out;
+
+    &:hover {
+      color: $hover_link;
+      border-bottom-color: $hover_link;
+    }
+  }
+}

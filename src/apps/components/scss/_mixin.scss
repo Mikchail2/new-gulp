@@ -1,0 +1,77 @@
+@import 'var';
+
+
+@mixin font_text() {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+@mixin backgroundImage($url,$gradien: false) {
+  @if ($gradien) {
+    background-image: $gradien, url($url);
+  } @else {
+    background-image: url($url);
+  }
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+
+
+// миксины для текста
+@mixin title_h2() {
+  @include font_text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 75px;
+}
+
+@mixin title_h3() {
+  @include font_text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+@mixin just_fucktext() {
+  @include font_text;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+
+// медиа запросы маза фака
+// долго я разбирался как этот миксин работает работает))
+@mixin media_query($args...) {
+  $from: 0; // создаются переменые
+  $to: 0;
+  $line: "";// сюда строка заебнёт
+  $first: nth($args, 1); // тут из args по индексу 1 вырезаем массив или не массив)
+  // функция nth работает так nth(масив,индекс)
+  // ну дальше всё понятно как два пальца об асфальт...
+  @if (type_of($first)== list) {
+    $from: nth($first, 1);
+    $to: nth($first, 2);
+  } @else {
+    $from: nth($args, 1);
+    $to: nth($args, 2);
+  }
+  @if ($from>0) {
+    $line: "(min-width: #{$from})";
+  }
+
+  @if ($to > 0) {
+    @if ($from>0) {
+      $line: "#{$line} and (max-width: #{$to - 1px})";
+    } @else {
+      $line: "(max-width: #{$to - 1px})";
+    }
+  }
+  @media all and #{$line}{
+    @content;
+  }
+}

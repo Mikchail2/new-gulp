@@ -1,0 +1,39 @@
+@import '../scss/mixin';
+
+.about-us {
+  @include backgroundImage("./img/bg_about.jpg", linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)));
+
+  &_title {
+    color: $white;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+}
+
+.about-block {
+  display: flex;
+
+  &_avatar {
+
+  }
+
+  &_text {
+    color: $white;
+    @include just_fucktext;
+  }
+
+  &_button {
+
+  }
+
+  &_text-button {
+    display: flex;
+    justify-content: space-between;
+    //align-content: inherit;
+    align-items: self-start;
+    flex-direction: column;
+    margin-left: 20px;
+
+  }
+
+}

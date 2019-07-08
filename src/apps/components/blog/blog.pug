@@ -1,0 +1,15 @@
+include vars
+section.blog.block
+  .container
+    h2.blog_title.title_h2 Мой блог
+    .blog_list
+      each item in list
+        .blog_item
+         img.blog_img(src= item.image alt='')
+          .blog_item-wr
+           h3.title_h3.blog_h3= item.title
+            p.blog_text.just_text= item.description
+          .blog_button-time
+            button.button.blog_button= item.button
+            time.blog_time= item.time
+    button.button.blog_all-news-button Посмотреть все новости

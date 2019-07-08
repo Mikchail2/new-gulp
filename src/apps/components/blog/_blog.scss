@@ -1,0 +1,59 @@
+@import '../scss/mixin';
+
+.blog {
+  background-color: $bg_blog;
+
+  &_title {
+    color: $black;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &_list {
+    display: flex;
+    margin: 0 -10px;
+    margin-bottom: 50px;
+  }
+
+  &_item {
+    width: 33%;
+    padding: 0 10px;
+
+  }
+
+  &_img {
+    width: 100%;
+  }
+  &_item-wr{
+    padding: 15px 20px 20px;
+    background-color: $white;
+  }
+  &_text {
+    margin-bottom: 47px;
+  }
+
+  &_button-time {
+    //padding-bottom: 20px;
+  }
+
+  &_button {
+
+  }
+
+  &_time {
+    margin-left: 30px;
+    font-weight: 100;
+  }
+
+  &_h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  &_all-news-button{
+    display: block;
+    margin: 0 auto;
+
+  }
+
+}
