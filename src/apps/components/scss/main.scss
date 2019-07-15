@@ -12,6 +12,12 @@
 
 // about
 @import "../about/about";
+//about-page
+@import "../about-page/about-page";
+// icon
+@import "../about-page/icon";
+// about-news
+@import "../about-page/about-news";
 //header
 @import "../header/header";
 // footer 
@@ -20,5 +26,7 @@
 @import "../menu/menu";
 //buttons
 @import "./buttons";
+//PHONE
+@import "../phone/phone";
 
 //Импорт компонентов для страниц

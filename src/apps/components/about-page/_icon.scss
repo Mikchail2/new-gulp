@@ -1,0 +1,52 @@
+@import '../scss/mixin';
+
+.icon {
+  margin-bottom: 40px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    &:before {
+      //position: absolute;
+      display: block;
+      margin-right: 20px;
+
+      top: 0;
+      left: 0;
+      content: "";
+      width: 71px;
+      height: 71px;
+      background-repeat: no-repeat;
+      background-size: rel-background-size(71px, 71px);
+      background-position: center;
+
+    }
+
+    &:nth-child(1) {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(71px, 71px, 0px, 0px);
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(71px, 71px, -70px, 0px);
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(71px, 71px, -140px, 0px);
+      }
+    }
+  }
+}

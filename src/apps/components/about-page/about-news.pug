@@ -1,0 +1,11 @@
+include var-about
+.about-news
+  .container
+    .about-news__list
+      each item in news
+        .about-news__item
+            img(src= item.src alt='foto')
+            .about-news__data.just_text
+              p.about-news__text= item.title
+              time.about-news__time= item.time
+    button.button.about-news__button Загрузить ещё

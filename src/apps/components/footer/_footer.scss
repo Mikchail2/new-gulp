@@ -1,6 +1,8 @@
 @import '../scss/mixin';
 .footer {
   padding: 34px 0;
+  position: relative;
+  bottom: 0;
 
   &_nav {
     display: flex;

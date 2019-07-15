@@ -13,7 +13,7 @@ sass.compiler = require('node-sass'); // Переназначаем компил
 
 //Обработка scss кода
 function scss() {
-  return gulp.src('./src/apps/components/scss//main.scss')
+  return gulp.src('./src/apps/components/scss/main.scss')
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer({
@@ -60,7 +60,7 @@ function fonts() {
 }
 //Обработка img
 function img() {
-  return gulp.src('./src/image/*')
+  return gulp.src('./src/image/**/*')
     .pipe(gulp.dest('./build/img'))
     .pipe(browserSync.reload({ stream: true }))
 }
@@ -76,11 +76,10 @@ function watch() {
     }
   });
   //Следить за SCSS файлами
-  gulp.watch('./src/scss/**/*.scss', scss)
+  gulp.watch('./src/apps/components/**/*.scss', scss)
   //Следить за JS файлами
   gulp.watch('./src/js/*.js', js)
-  gulp.watch('./src/apps/*.pug', pug)
-  gulp.watch('./src/apps/components/apps*.pug', pug)
+  gulp.watch('./src/apps/**/*.pug', pug)
   //При изменении HTML запустить синхронизацию
   gulp.watch([
     "./src/apps/components/*.html",

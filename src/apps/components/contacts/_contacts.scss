@@ -1,15 +1,18 @@
 @import '../scss/mixin';
+
 .contact {
   background-color: $bg_contact;
-  &_title{
+
+  &_title {
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 40px;
   }
-  &_links {
+
+  &_list {
     display: flex;
     margin: 0 -10px;
-    justify-content: center;
+    //justify-content: center;
     @include media_query(0, 1300px) {
       flex-wrap: wrap;
     }
@@ -17,14 +20,71 @@
 
   &_link {
     width: 25%;
-    padding: 57px 110px;
-    background-color: $bg_social;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+    display: block;
+    padding: 0 10px;
+    transition: transform .3s ease-out;
+    position: relative;
+
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
     @include media_query(0, 1300px) {
       margin-bottom: 10px;
+    }
+  }
+
+  &_item {
+    // overflow: hidden;
+    background-color: $bg_social;
+    height: 171px;
+
+    position: relative;
+
+
+    &:before {
+      //padding-bottom: 100%;
+      //display: block;
+      position: absolute;
+      margin-right: 20px;
+      top: 50%;
+      left: 50%;
+      width: 110px;
+      height: 110px;
+      content: "";
+      transform: translate(-50%, -50%);
+      background-repeat: no-repeat;
+      background-size: rel-background-size(110px, 110px);
+      background-position: center;
+    }
+
+    &--vk {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(110px, 110px, 0px, -71px);
+      }
+
+    }
+
+    &--inst {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(110px, 110px, -110px, -71px);
+      }
+
+    }
+
+    &--phone {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(110px, 110px, -220px, -71px);
+      }
+
+    }
+
+    &--mail {
+      &:before {
+        background: $sprite_url no-repeat rel-background-position(110px, 110px, -330px, -71px);
+      }
+
     }
   }
 }

@@ -1,0 +1,40 @@
+@import '../scss/mixin';
+
+.about-page {
+  background-color: $bg_about_page;
+  &__title {
+    color: $black;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+  }
+}
+
+.about-block {
+  display: flex;
+
+  &__avatar {
+
+  }
+  &__text-title{
+    margin-left: 20px;
+  }
+  &__text {
+    color: $black;
+    @include just_fucktext;
+  }
+
+  &__button {
+
+  }
+
+  &__text-button {
+    display: flex;
+    justify-content: space-between;
+    //align-content: inherit;
+    align-items: self-start;
+    flex-direction: column;
+    margin-left: 20px;
+
+  }
+
+}

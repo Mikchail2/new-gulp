@@ -3,6 +3,9 @@
 body {
   font-family: Oswald, sans-serif !important; //а это какого?
 }
+* {
+   box-sizing: border-box;
+}
 
 .container {
   max-width: 1180px;
@@ -22,9 +25,12 @@ body {
 .title_h2 {
   @include title_h2;
 }
-
 .title_h3 {
   @include title_h3;
+}
+
+.title_h4 {
+  @include title_h4;
 }
 
 h1, h2, h3, p {

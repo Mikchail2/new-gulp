@@ -1,0 +1,36 @@
+.about-news {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    margin-bottom: -20px;
+  }
+
+  &__item {
+    width: 33.33%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__button {
+
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    max-width: 228px;
+    width: 100%;
+
+  }
+
+}

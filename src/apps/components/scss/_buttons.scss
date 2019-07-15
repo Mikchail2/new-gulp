@@ -1,19 +1,21 @@
 @import 'mixin';
 
 
-.button{
-    padding: 10px 20px;
-    background-color: $button;  
-    color: $black;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease-out;
-    &:hover{
-        background-color: $hover_button;
-    }
-    &:active{
-        background-color: $active_button;
-    }
+.button {
+  padding: 10px 20px;
+  background-color: $button;
+  color: $black;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-out;
+
+  &:hover {
+    background-color: $hover_button;
+  }
+
+  &:active {
+    background-color: $active_button;
+  }
 }
