@@ -7,6 +7,12 @@ $sprite_url: url('../img/sprite.svg');
 
 }
 
+//@mixin keyframes($animation-name) {
+//  @keyframes $animation-name {
+//    @content;
+//  }
+//}
+
 @mixin font_text() {
   font-family: 'Open Sans Condensed', sans-serif;
 }

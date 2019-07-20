@@ -1,0 +1,143 @@
+@import "mixin";
+@import "keyframe";
+
+.podium {
+  height: 200px;
+  width: 200px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.podium1 {
+  background-image: url('./img/image-1-4.png');
+  left: 207px;
+  top: 10px;
+  animation: podium1 8s 1s linear infinite;
+}
+
+.podium2 {
+  background-image: url('./img/slider-1.png');
+  left: -97px;
+  top: 6px;
+  animation: podium2 8s 1s linear infinite;
+
+}
+
+
+
+.podium3 {
+  background-image: url('./img/slider-3.png');
+  left: 43px;
+  top: 11px;
+  width: 300px;
+  height: 350px;
+  animation: podium3 8s 1s linear infinite;
+}
+
+.animate {
+  position: relative;
+  height: 600px;
+
+  &__block {
+    margin: 0 auto 100px;
+    position: relative;
+
+    margin-left: 100px;
+  }
+}
+
+.wrapper {
+  perspective: 900px;
+  margin: 100px;
+  margin-left: 300px;
+}
+
+.cube {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-origin: 50% 50% -150px;
+  transform-style: preserve-3d;
+  //animation: cubeTransform 3s linear infinite;
+}
+
+.side {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  border: 10px solid #ffffff;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 5em;
+  line-height: 300px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  transform-origin: 50% 50% -150px;
+  user-select: none;
+  top: 0;
+  left: 0;
+}
+.danger {
+  background-image: url('./img/danger.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 700px;
+  left: 118px;
+  opacity: 0;
+  z-index: 2;
+  animation: dangers 2s 2.7s  linear 1;
+}
+
+.rocket {
+  width: 100px;
+  height: 200px;
+  background-image: url('./img/raceta.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(90deg);
+  animation: rockets 1s 2s linear 1;
+  position: absolute;
+    top: 10%;
+    left: -10%;
+}
+.side1{
+   animation: side1 2s 2.7s linear 1;
+}
+.side2 {
+  transform: rotateY(90deg);
+  animation: side2 2s 2.7s linear 1;
+
+}
+
+.side3 {
+  transform: rotateY(-90deg);
+  top: 0;
+  left: 0;
+  animation: side3 2s 2.7s linear 1;
+}
+
+.side4 {
+  transform: rotateX(90deg);
+  top: 0;
+  left: 0;
+  animation: side4 2s 2.7s linear 1;
+}
+
+.side5 {
+  transform: rotateX(-90deg);
+  animation: side5 2s 2.7s linear 1;
+}
+
+.side6 {
+  transform: rotateY(180deg);
+  animation: side6 2s 2.7s linear 1;
+}
+
+

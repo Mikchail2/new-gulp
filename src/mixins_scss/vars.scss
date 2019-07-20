@@ -1,0 +1,42 @@
+$full_width: 100%;
+$width_column12: $full_width / 12;
+$width_column10: $full_width / 10;
+
+$rem: 1rem / 16;
+$padding_container: 15*$rem;
+
+$pathImages: "../images/lending/";
+
+$extra_mobile_width: 500px;
+$extra_mobile_media: max-width 500px;
+
+$mobile_width: 767px;
+$mobile_media: max-width 767px;
+
+$tablet_min_width: 766px;
+$tablet_min_media: min-width 766px;
+
+$tablet_max_width: 1280px;
+$tablet_max_media: max-width 1280px;
+
+$desktop_width: 1279px;
+$desktop_media: min-width 1279px;
+
+$extra_desktop_width: 1920px;
+$extra_desktop_media: min-width 1920px;
+
+// colors
+$perple: #c93790;
+$blue: #512da8;
+$blue2: #673ab7;
+$gradient: #512da8;
+$gradient2: #ff3b85;
+$black: #212121;
+$grey_bg: #f7f7f7;
+$grey_text: #757575;
+$text_link: #bdbdbd;
+$text_link_form: #b5abd6;
+$border_inp: #512da8;
+$check: #5a32ae;
+$gray: #fde37a;
+$gray2: #8bb9fd;

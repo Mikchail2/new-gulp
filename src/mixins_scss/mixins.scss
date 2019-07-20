@@ -1,0 +1,207 @@
+@import "vars";
+
+%text_overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+%clearfix {
+  &:after, &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin bg($img, $size: cover, $pos: center, $repeat: no-repeat) {
+  background-size: $size;
+  background-position: $pos;
+  background-repeat: $repeat;
+  background-image: url('#{$pathImages}#{$img}');
+}
+
+// mixins for create grid
+@mixin row_grid($padding_size, $mode: 'flex') {
+  @if ($mode == 'flex') {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @else {
+    &:before, &:after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+  }
+  @if ($padding_size) {
+    margin-left: -$padding_size;
+    margin-right: -$padding_size;
+  }
+  @media (max-width: $extra_mobile_width) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@mixin width_extra_mobile($count_column) {
+  @media (max-width: $extra_mobile_width) {
+    width: $width_column12 * $count_column;
+  }
+}
+@mixin width_mobile($count_column) {
+  @media (max-width: $mobile_width) {
+    width: $width_column12 * $count_column;
+  }
+}
+@mixin width_tablet($count_column) {
+  @media (min-width: $tablet_min_width) and (max-width: $tablet_max_width) {
+    width: $width_column12 * $count_column;
+  }
+}
+@mixin width_device($count_column) {
+  @media (max-width: $tablet_max_width) {
+    width: $width_column12 * $count_column;
+  }
+}
+@mixin width_desktop($count_column) {
+  @if ($count_column > 2) {
+    @media (min-width: $desktop_width) {
+      width: $width_column12 * $count_column;
+    }
+  }
+  // WIDTH: 20% - ПО 5 в ряд
+  @if ($count_column == 2) {
+    @media (min-width: $desktop_width) {
+      width: $width_column10 * $count_column;
+    }
+  }
+  // ПО 6 в ряд
+  @if ($count_column == 1) {
+    @media (min-width: $desktop_width) {
+      width: $width_column12 * 2;
+    }
+  }
+}
+
+@mixin right_mobile($count_column) {
+  @media (max-width: $mobile_width) {
+    margin-right: $width_column12 * $count_column;
+  }
+}
+@mixin right_tablet($count_column) {
+  @media (min-width: $tablet_min_width) and (max-width: $tablet_max_width) {
+    margin-right: $width_column12 * $count_column;
+  }
+}
+@mixin right_device($count_column) {
+  @media (max-width: $tablet_max_width) {
+    margin-right: $width_column12 * $count_column;
+  }
+}
+@mixin right_desktop($count_column) {
+  @media (min-width: $desktop_width) {
+    margin-right: $width_column12 * $count_column;
+  }
+}
+
+@mixin left_mobile($count_column) {
+  @media (max-width: $mobile_width) {
+    margin-left: $width_column12 * $count_column;
+  }
+}
+@mixin left_tablet($count_column) {
+  @media (min-width: $tablet_min_width) and (max-width: $tablet_max_width) {
+    margin-left: $width_column12 * $count_column;
+  }
+}
+@mixin left_device($count_column) {
+  @media (max-width: $tablet_max_width) {
+    margin-left: $width_column12 * $count_column;
+  }
+}
+@mixin left_desktop($count_column) {
+  @media (min-width: $desktop_width) {
+    margin-left: $width_column12 * $count_column;
+  }
+}
+
+
+@mixin column($padding_size, $count_desktop: 12, $count_tablet: 12, $count_mobile: 12, $count_extra_mobile: 12, $mode: 'flex') {
+  display: block;
+  @if ($mode == 'float') {
+    float: left;
+  }
+  width: 100%;
+  padding-left: $padding_size;
+  padding-right: $padding_size;
+  @include width_desktop($count_desktop);
+  @include width_tablet($count_tablet);
+  @include width_mobile($count_mobile);
+  @include width_extra_mobile($count_extra_mobile);
+}
+
+@mixin hide_mobile {
+  @media (max-width: $mobile_width) {
+    display: none !important;
+  }
+}
+@mixin hide_tablet {
+  @media (min-width: $tablet_min_width) and (max-width: $tablet_max_width) {
+    display: none !important;
+  }
+}
+@mixin hide_device {
+  @media (max-width: $tablet_max_width) {
+    display: none !important;
+  }
+}
+@mixin hide_desktop {
+  @media (min-width: $desktop_width) {
+    display: none !important;
+  }
+}
+
+// mixins for fonts
+%h1 {
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: 600;
+}
+
+@mixin active() {
+  user-select: none;
+  cursor: pointer;
+  transition:all 0.2s ease-out;
+  &:active {
+    box-shadow: 0 0 0  rgba(black, 0.4);
+    transform: translate(3px, 3px );
+  }
+}
+
+@mixin button($color, $color2: 0) {
+  width: 100%;
+  max-width: 270px;
+  line-height: 60px;
+  height: 60px;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+  box-shadow: 5px 10px 15px rgba(black, 0.4);
+  user-select: none;
+  font-size: 18px;
+  @include active();
+  @if ($color2 != 0) {
+    background: linear-gradient(to left, $color, $color2);
+    &:hover {
+      background: linear-gradient(to left, lighten($color, 5), lighten($color2, 5));
+    }
+  }
+  @else {
+    background-color: $color;
+    &:hover {
+      background-color: lighten($color, 5);
+    }
+  }
+
+}

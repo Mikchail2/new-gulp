@@ -1,0 +1,15 @@
+@mixin fontFace($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url("../fonts/"+ $file +".eot");
+    src: url("../fonts/"+ $file +".eot") format('embedded-opentype'), url("../fonts/"+ $file +".woff") format('woff'),
+    url("../fonts/"+ $file +".ttf") format('truetype'), url("../fonts/"+ $file +".svg") format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include fontFace('roboto', 'roboto-light', 300);
+@include fontFace('roboto', 'roboto-regular');
+@include fontFace('roboto', 'roboto-medium', 500);
+@include fontFace('roboto', 'roboto-bold', bold);

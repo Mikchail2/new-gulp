@@ -1,0 +1,376 @@
+@import "mixins";
+
+@keyframes button-load {
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes button-load_square {
+    from {
+        opacity: 0.3;
+    }
+    22% {
+        opacity: 1;
+    }
+    44% {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 0.3;
+    }
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  z-index: 1;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  @include fontsize_default;
+  span{
+    color: $white;
+  }
+  &.btn_height_tall{
+    padding: 24px 0 23px;
+    @include font-size(18px, 21px);
+  }
+  &.btn_height_thin{
+    padding: 8px 0;
+    @include font-size(16px);
+  }
+  &.btn_bg_blue{
+    background: $blue;
+  }
+  &.btn_bg_red{
+    background: $red;
+  }
+  &.btn_width_200{
+    width: 200px;
+  }
+}
+
+.btn:after, .btn:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+.btn:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #265d94;
+	border-width: 16px;
+	margin-top: -16px;
+}
+.btn:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #153a65;
+	border-width: 16px;
+	margin-top: -14px;
+}
+
+
+$btn-color-blue: #237CE3;
+$btn-color-blue_hover: #1C5CA8;
+
+$btn-color-red: #E93050;
+$btn-color-red_hover: #AA263D;
+
+.button {
+    display: block;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+
+    span {
+        width: calc(100% - 30px);
+        display: block;
+        position: relative;
+        left: 0;
+        top: 0;
+        color: white;
+        transition: 0.3s ease-in-out;
+        white-space: nowrap;
+    }
+
+    &:before {
+        width: calc(100% - 30px);
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        color: white;
+        transition: 0.3s ease-in-out;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: white;
+        transition: 0.3s ease-in-out;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+}
+
+.button_hover {
+    &:hover {
+        &:after {
+            transform: translate3d(0, 0, 0);
+        }
+        &:before {
+            transform: translate3d(0, 0, 0);
+        }
+        span {
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}
+
+.button__load {
+    &:after {
+        animation-name: button-load;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+}
+.button__load_squares {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+}
+.button__load__square {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    opacity: 0.3;
+    animation-name: button-load_square;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+
+
+
+    &:not(:first-child) {
+        margin-left: 8px;
+    }
+
+    &_2 {
+
+        animation-delay: 0.25s;
+    }
+    &_3 {
+        animation-delay: 0.5s;
+    }
+    &_4 {
+        animation-delay: 0.75s;
+    }
+}
+
+.button-repair-your-roof {
+    width: 300px;
+    background-color: $btn-color-red;
+    clip-path: polygon(270px 0%, 100% 50%, 270px 100%, 0% 100%, 0% 0%);
+
+    span {
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font_size(18px, 60px);
+    }
+
+    &:before {
+        content: 'repair your roof';
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font_size(18px, 60px);
+    }
+
+    &:after {
+        background-color: $btn-color-red_hover;
+        clip-path: polygon(270px 0%, 100% 50%, 270px 100%, 0% 100%, 0% 0%);
+    }
+}
+.button-schedule-inspection {
+  width: 380px;
+  background-color: $btn-color-red;
+  clip-path: polygon(350px 0%, 100% 50%, 350px 100%, 0% 100%, 0% 0%);
+
+
+  span {
+    font-weight: bold;
+    text-transform: uppercase;
+    @include font_size(18px, 60px);
+  }
+
+  &:before {
+    content: 'schedule your roof inspection';
+    font-weight: bold;
+    text-transform: uppercase;
+    @include font_size(18px, 60px);
+  }
+
+  &:after {
+    background-color: $btn-color-red_hover;
+    clip-path: polygon(350px 0%, 100% 50%, 350px 100%, 0% 100%, 0% 0%);
+  }
+}
+.button-contact-valor {
+    width: 200px;
+    background-color: $btn-color-blue;
+    clip-path: polygon(178px 0%, 100% 50%, 178px 100%, 0% 100%, 0% 0%);
+
+    span {
+        font-weight: 600;
+        width: calc(100% - 22px);
+        @include font_size(16px, 40px);
+    }
+
+    &:before {
+        content: 'Contact Valor';
+        font-weight: 600;
+        width: calc(100% - 22px);
+        @include font_size(16px, 40px);
+    }
+
+    &:after {
+        background-color: $btn-color-blue_hover;
+        clip-path: polygon(178px 0%, 100% 50%, 178px 100%, 0% 100%, 0% 0%);
+    }
+}
+.button-view-more {
+    width: 200px;
+    background-color: $btn-color-blue;
+    clip-path: polygon(178px 0%, 100% 50%, 178px 100%, 0% 100%, 0% 0%);
+
+    span {
+        font-weight: 600;
+        width: calc(100% - 22px);
+        @include font_size(16px, 40px);
+    }
+
+    &:before {
+        content: 'View More';
+        font-weight: 600;
+        width: calc(100% - 22px);
+        @include font_size(16px, 40px);
+    }
+
+    &:after {
+        background-color: $btn-color-blue_hover;
+        clip-path: polygon(178px 0%, 100% 50%, 178px 100%, 0% 100%, 0% 0%);
+    }
+}
+.button-submit{
+   width: 270px;
+
+    background-color: $btn-color-red;
+    clip-path: polygon(250px 0%, 100% 50%, 250px 100%, 0% 100%, 0% 0%);
+
+    span {
+        width: calc(100% - 20px);
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font_size(18px, 40px);
+    }
+
+    &:before {
+        width: calc(100% - 20px);
+        content: 'SUBMIT';
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font_size(18px, 40px);
+    }
+
+    &:after {
+        background-color: $btn-color-red_hover;
+        clip-path: polygon(250px 0%, 100% 50%, 250px 100%, 0% 100%, 0% 0%);
+    }
+
+
+}
+.button-get-inspection {
+    width: 270px;
+    background-color: $btn-color-red;
+    clip-path: polygon(240px 0%, 100% 50%, 240px 100%, 0% 100%, 0% 0%);
+
+    span {
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font_size(18px, 60px);
+    }
+
+    &:before {
+        content: '';
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font_size(18px, 60px);
+    }
+
+    &:after {
+        background-color: $btn-color-red_hover;
+        clip-path: polygon(240px 0%, 100% 50%, 240px 100%, 0% 100%, 0% 0%);
+    }
+}
+
+    //<button class="button button_hover button-repair-your-roof">
+    //    <span>
+    //        repair your roof
+    //    </span>
+    //</button>
+    //<button class="button button_hover button-schedule-inspection">
+    //
+    //    <span>
+    //        schedule your roof inspection
+    //    </span>
+    //</button>
+    //<button class="button button_hover button-contact-valor">
+    //    <span>
+    //        Contact Valor
+    //    </span>
+    //</button>
+    //<button class="button button_hover button-view-more">
+    //    <span>
+    //        View More
+    //    </span>
+    //</button>
+    //<button class="button button-get-inspection" id="send-email-or-phone">
+    //    <span>
+    //        Get roof inspection
+    //    </span>
+    //
+    //    <div class="button__load_squares">
+    //        <div class="button__load__square button__load__square_1"></div>
+    //        <div class="button__load__square button__load__square_2"></div>
+    //        <div class="button__load__square button__load__square_3"></div>
+    //        <div class="button__load__square button__load__square_4"></div>
+    //    </div>
+    //
+    //</button>
+    //<button class="button button-submit button_hover">
+    //
+    //    <span>
+    //        submit
+    //    </span>
+    //</button>
