@@ -50,10 +50,11 @@
       margin-right: 20px;
       top: 50%;
       left: 50%;
+      transform: translate(-50%, -50%);
       width: 110px;
       height: 110px;
       content: "";
-      transform: translate(-50%, -50%);
+
       background-repeat: no-repeat;
       background-size: rel-background-size(110px, 110px);
       background-position: center;
