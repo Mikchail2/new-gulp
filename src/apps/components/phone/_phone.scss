@@ -23,8 +23,6 @@
   }
 
   &__img {
-
-
     position: relative;
 
     &:before {
@@ -32,16 +30,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out;
       width: 40px;
       height: 40px;
       position: absolute;
       background: $sprite_url no-repeat rel-background-position(40px, 40px, -255px, -113px);
       background-size: rel-background-size(40px, 40px, 250px, 100px);
     }
-
-
   }
-
-
 }

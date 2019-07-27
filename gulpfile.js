@@ -29,7 +29,7 @@ function scss() {
 function js() {
   return gulp.src('./src/js/*.js')
     .pipe(concat('script.js'))
-    .pipe(uglify({ toplevel: true }))
+    // .pipe(uglify({ toplevel: true }))
     .pipe(gulp.dest('./build'))
     .pipe(browserSync.reload({ stream: true }))
 }

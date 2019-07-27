@@ -26,7 +26,6 @@
 }
 
 
-
 .podium3 {
   background-image: url('./img/slider-3.png');
   left: 43px;
@@ -49,12 +48,14 @@
 }
 
 .wrapper {
+  position: relative;
   perspective: 900px;
   margin: 100px;
   margin-left: 300px;
 }
 
 .cube {
+
   position: relative;
   width: 300px;
   height: 300px;
@@ -81,6 +82,7 @@
   top: 0;
   left: 0;
 }
+
 .danger {
   background-image: url('./img/danger.png');
   background-size: contain;
@@ -88,11 +90,11 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  top: 700px;
-  left: 118px;
+  top: 0px;
+  left: -92px;
   opacity: 0;
   z-index: 2;
-  animation: dangers 2s 2.7s  linear 1;
+  animation: dangers 4s 2.7s linear infinite;
 }
 
 .rocket {
@@ -102,42 +104,43 @@
   background-size: contain;
   background-repeat: no-repeat;
   transform: rotate(90deg);
-  animation: rockets 1s 2s linear 1;
+  animation: rockets 4s 1s linear infinite;
   position: absolute;
-    top: 10%;
-    left: -10%;
+  top: -120%;
+  left: -54%;
 }
-.side1{
-   animation: side1 2s 2.7s linear 1;
+
+.side1 {
+  animation: side1 4s 2.7s linear infinite;
 }
+
 .side2 {
   transform: rotateY(90deg);
-  animation: side2 2s 2.7s linear 1;
-
+  animation: side2 4s 2.7s linear infinite;
 }
 
 .side3 {
   transform: rotateY(-90deg);
   top: 0;
   left: 0;
-  animation: side3 2s 2.7s linear 1;
+  animation: side3 4s 2.7s linear infinite;
 }
 
 .side4 {
   transform: rotateX(90deg);
   top: 0;
   left: 0;
-  animation: side4 2s 2.7s linear 1;
+  animation: side4 4s 2.7s linear infinite;
 }
 
 .side5 {
   transform: rotateX(-90deg);
-  animation: side5 2s 2.7s linear 1;
+  animation: side5 4s 2.7s linear infinite;
 }
 
 .side6 {
   transform: rotateY(180deg);
-  animation: side6 2s 2.7s linear 1;
+  animation: side6 4s 2.7s linear infinite;
 }
 
 
