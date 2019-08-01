@@ -1,4 +1,4 @@
-if (location.pathname === '/js.html') {
+if (location.pathname === '/jsdz.html') {
 
   var textDiv = document.querySelector('.text'),
     forDiv = document.querySelector('.for'),
