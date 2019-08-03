@@ -31,7 +31,23 @@
 @import 'animate';
 
 //Импорт компонентов для страниц
+.page-table{
+  //border-collapse: collapse ;
+  border: #1C5CA8 1px solid;
+  box-sizing: border-box;
+  padding:10px 50px;
+  tr{
+     //border: 1px solid black;
+    //display: inline-block;
+    text-align: right;
 
+  }
+  td{
+    //width: 51%;
+    display: inline-block;
+    margin-left: 30px;
+  }
+}
 
 // стили для js.page
 *{

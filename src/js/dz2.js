@@ -1,4 +1,4 @@
-window.onload = function () {
+if (location.pathname === '/jsdz.html') {
 
   function charCampare(a, b) {
     if (a > b) {
@@ -40,4 +40,17 @@ f()
   console.log('запуск функции charCampare("a","b") -->')
   charCampare('a','b');
   console.log('запусти функцию numberCampare() ,без параметров')
+  function srting(str) {
+    // var arr = str.split('');
+    var result = '';
+    for (var i = 0; i < str.length; i++) {
+      const shouldBeBig = (str[i - 2] === '.');
+      result += shouldBeBig ? str[i].toUpperCase() : str[i];
+
+    }
+    console.log(result)
+
+  }
+console.log(" srting('Саша купил машину. он использует ее каждый день. саша очень рад своей покупке.') =>")
+  srting('Саша купил машину. он использует ее каждый день. саша очень рад своей покупке.')
 }
