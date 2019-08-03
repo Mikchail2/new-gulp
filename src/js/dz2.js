@@ -39,9 +39,11 @@ if (location.pathname === '/jsdz.html') {
 f()
   console.log('запуск функции charCampare("a","b") -->')
   charCampare('a','b');
-  console.log('запусти функцию numberCampare() ,без параметров')
+  console.log('запусти функцию numberCampare() ,без параметров');
+
   function srting(str) {
     // var arr = str.split('');
+    console.log(str.indexOf('.'))
     var result = '';
     for (var i = 0; i < str.length; i++) {
       const shouldBeBig = (str[i - 2] === '.');

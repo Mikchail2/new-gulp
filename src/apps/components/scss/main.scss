@@ -31,6 +31,13 @@
 @import 'animate';
 
 //Импорт компонентов для страниц
+form{
+  margin-bottom: 10px;
+}
+.shop{
+  .button{
+  }
+}
 .page-table{
   //border-collapse: collapse ;
   border: #1C5CA8 1px solid;
@@ -43,12 +50,19 @@
 
   }
   td{
+    padding: 5px 15px;
+    width: 200px;
     //width: 51%;
     display: inline-block;
     margin-left: 30px;
   }
 }
-
+strong{
+  color: #ff4933;
+}
+  input{
+    padding: 5px;
+  }
 // стили для js.page
 *{
   padding: 0;

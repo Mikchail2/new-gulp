@@ -3,18 +3,52 @@ extends components/layout
 block about
   .container
     .blocks
-      p тут в консоли дз 4 c ***********
+      p тут  дз 4 c ***********
       a(href="/jsdz.html") дз 3 + 4 + 1 + 2
-
+      p class <strong>Shop</strong> в который надо передать название магазина.
+      p метод <strong>add</strong> принимает цену и продукт и заносит
+        |  в магазин
+      p метод <strong>get</strong> выводит весь магазин
+      p метод <strong>find</strong> по цене или по названию продукта находить объект
+      p метод <strong>set</strong> принимает номер товара из массива и цену которую надозадать
+      p и метод <strong>delete</strong> принимает номер объекта и удаляет его из массива магазина
+      p let shop = new Shop('fruit');
+      p shop.add(20, 'яблоки');
+      p shop.add(23, 'апельсины');
+      p shop.add(223, 'грушы');
+      p сразу говорю в инпуты можно написать что хочешь)
 
     .shop
-      form(action='')
+      form(action='' class='form-add')
         label Именнование
         input(type="text" class='input-shop')
         label Цена
-        input(type="text" class='input-add-product')
+        input(type="number" class='input-add-product')
         button.button.addshop Добавить товар
+      form(action='')
+        label Введите номер товара
+        input(type="number" class='input-shop')
+        button.button.deleteshop Удалить товар
+      form(action='' class='form-cost')
+        label Введите товар и его выведет в консоль
+        input(type="text" class='input-shop')
+        button.button.findshop найти товар
+      form(action='' class='form-cost')
+        label Введите номер товара
+        input(type="number" class='input-shop')
+        label Введите цену товара
+        input(type="number" class='input-shop')
+        button.button.costshop установить новую цену
+
     .look
-      p Фрукты
+      p сортировку попытался сделать , сортирует по номеру,а по продукту фиг пойми как сортирует:
+      br
       table.page-table
+        caption Фрукты
+        thead
+          tr
+            td Номер
+            td Цена
+            td Продукт
+        tbody
 
