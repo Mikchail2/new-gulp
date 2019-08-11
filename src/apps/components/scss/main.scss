@@ -38,6 +38,42 @@ form{
   .button{
   }
 }
+
+.asdss{
+  height: 500px;
+}
+
+.list{
+    width:250px;
+    border-radius: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    position: absolute;
+    padding: 20px;
+     padding-right: 80px;
+    display: none;
+    list-style: none;
+    z-index: 111;
+
+
+  }
+.list__item{
+    padding-bottom: 20px;
+
+   font-size: 20px;
+    text-transform: capitalize;
+   font-family: sans-serif;
+   transition: color .2s linear;
+   white-space: nowrap;
+ }
+  li{
+
+    cursor: pointer
+  }
+  li:hover{
+      color: red;
+  }
+
 .page-table{
   //border-collapse: collapse ;
   border: #1C5CA8 1px solid;
