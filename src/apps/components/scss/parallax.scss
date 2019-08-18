@@ -1,0 +1,33 @@
+.block-img-container{
+  height: 3000px;
+}
+.block-img{
+  max-width: 900px;
+  margin: 100px auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  img{
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    min-height: 100.5%;
+    min-width: 100.5%;
+  }
+  &:before{
+    display: block;
+    padding-bottom: 67%;
+    content: '';
+  }
+  &__title{
+    color: red;
+    font-size: 45px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
