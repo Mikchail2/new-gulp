@@ -1,0 +1,91 @@
+.todo {
+  width: 700px;
+  border: 20px solid gray;
+  border-radius: 10px;
+  background-color: gray;
+  margin: 0 auto;
+
+  &__list {
+
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__enter {
+    display: none;
+  }
+
+  &__check {
+    display: block;
+
+
+  }
+
+  input[type='checkbox']:checked + label {
+    text-decoration: line-through;
+    color: lighten(black,30%);
+  }
+
+  &__label {
+    user-select: none;
+    display: block;
+
+
+  }
+
+  &__button-modify {
+    display: block;
+  }
+
+  &__button-remove {
+
+  }
+
+  &__button-save {
+    display: none;
+  }
+
+  &__form {
+    margin-top: 10px;
+    display: flex;
+
+  }
+
+  &__add {
+    flex-basis: 100%;
+  }
+
+  &__form-button {
+
+  }
+
+  &__editing {
+
+
+    .todo__check {
+      display: none;
+    }
+
+    .todo__label {
+      display: none;
+    }
+
+    .todo__button-save {
+      display: block;
+    }
+
+    .todo__button-modify {
+      display: none;
+    }
+
+    .todo__enter {
+      display: block;
+    }
+
+  }
+}

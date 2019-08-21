@@ -9,9 +9,12 @@ block about
       a(href="/context.html") дз 6
       br
       a(href="/parallax.html") дз с паралаксом
+      br
+      a(href="/todo.html") дз с Todo
+
       p class <strong>Shop</strong> в который надо передать название магазина.
-      p метод <strong>add</strong> принимает цену и продукт и заносит
-        |  в магазин
+      p метод <strong>add</strong> принимает цену и продукт и заносит в магазин
+
       p метод <strong>get</strong> выводит весь магазин
       p метод <strong>find</strong> по цене или по названию продукта находить объект
       p метод <strong>set</strong> принимает номер товара из массива и цену которую надозадать
@@ -21,7 +24,7 @@ block about
       p shop.add(23, 'апельсины');
       p shop.add(223, 'грушы');
       p сразу говорю в инпуты можно написать что хочешь)
-
+  .container
     .shop
       form(action='' class='form-add')
         label Именнование

@@ -30,6 +30,7 @@
 @import "../phone/phone";
 @import 'animate';
 @import 'parallax';
+@import 'todo';
 
 //Импорт компонентов для страниц
 form{
@@ -107,7 +108,7 @@ strong{
 }
 .container{
   .blocks{
-    height: 300px;
+    min-height: 300px;
   }
 }
 

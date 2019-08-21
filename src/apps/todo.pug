@@ -1,0 +1,25 @@
+extends components/layout
+
+
+block about
+  .container
+    .todo
+      ul.todo__list
+        li.todo__item(data-id="asdasdg")
+          input.todo__enter(type="text")
+
+          input.todo__check(type="checkbox" id="4")
+          label.todo__label(for="4") Какое то е**** дело
+          button.button.todo__button-save Save
+          button.button.todo__button-modify Modify
+          button.button.todo__button-remove Remove
+
+
+      form.todo__form
+        input.todo__add(type='text')
+        button.button.todo__form-button Write
+
+
+
+block script
+  script(src="todo.js")

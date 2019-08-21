@@ -25,16 +25,13 @@ block.forEach((title, index) => {
 });
 
 window.addEventListener('scroll', function (e) {
-  // var blockImg = -(blockImgBottom + blockImgHeight) + window.pageYOffset;
 
   const scroll = window.pageYOffset;
   block.forEach((title, index) => {
-    if (arrBlockImgTop[index] < scroll && arrBlockImgBottom[index] > scroll) {
-      console.log(index)
+    if (arrBlockImgTop[index]-100 < scroll && arrBlockImgBottom[index]-100 > scroll) {
       var blockImgHeight = title.clientHeight;
-      var titleC = (scroll - arrBlockImgTop[index]);
-      console.log(index+ "::" +titleC)
-      title.querySelector('.block-img__title').style.top = `${parseInt(arrTitlePositionTop[index])+titleC/2}px`;
+      var titleC = (scroll - arrBlockImgTop[index])+100;
+      title.querySelector('.block-img__title').style.top = `${parseInt(arrTitlePositionTop[index])-titleC}px`;
     }
   });
 });
