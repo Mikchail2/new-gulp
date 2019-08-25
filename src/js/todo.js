@@ -93,3 +93,34 @@ formItem.addEventListener('submit', (e) => {
 });
 
 bindListeners(item);
+
+var forin = document.querySelector('.forin-input');
+var result = document.querySelector('.result');
+var aniWidth = document.querySelector('.width');
+var aniBlock = document.querySelector('.animate-block');
+
+forin.addEventListener('input',function(e){
+  e.preventDefault();
+  if(e.target.value === ''){
+    result.innerHTML = 'введите число'
+  }
+  result.innerHTML = (parseInt(e.target.value) * 1.8 + 32).toFixed(1);
+});
+
+function animateWidth(){
+  var step = 2;
+  var timerId = setInterval(()=>{
+    step+=5;
+     aniWidth.style.width = step + '%';
+
+     if(step >= 100){
+        aniWidth.style.width =  '100%';
+       clearInterval(timerId)
+     }
+  },1000/60)
+
+}
+aniBlock.addEventListener('click',function () {
+  aniWidth.style.width = 0;
+  animateWidth();
+});
